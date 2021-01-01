@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ $# -ne 1 ]; then
+  echo "cowboy command need 1 argment"
+  exit 1
+fi
+docker run -it --rm cow $1
