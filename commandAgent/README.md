@@ -14,7 +14,7 @@ $ docker build -t cow .  # cowはimageName
 
 Dockerを実行してからcowsayを実行する
 ```
-$ docker run -it cow /bin/bash # Dockerのbashを実行する
+$ docker run -it cow /bin/bash # Dockerのbashを実行する (ENTRYPOINTがDockerに設定されている場合はdocker run -it cow /bin/bash)
 $ cowsay "I'm cow"             # bashでcowsayを実行
 ```
 
@@ -22,7 +22,7 @@ $ cowsay "I'm cow"             # bashでcowsayを実行
 
 Dockerのコマンドとして実行
 ```
-$ docker run -it --rm  cow hello
+$ docker run -it --rm  cow cowsay hello
 ```
 
 ### コマンドを登録する
@@ -34,7 +34,7 @@ if [ $# -ne 1 ]; then
   echo "cowboy command need 1 argment"
   exit 1
 fi
-docker run -it --rm cow $1
+docker run -it --rm cow cowsay $1
 ```
 
 aliasコマンドを使ってcowsayをaliasに登録する。以下はcallmeコマンドを作成してcowsayを紐付けている例。

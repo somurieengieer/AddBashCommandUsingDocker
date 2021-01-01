@@ -8,4 +8,6 @@ RUN apt-get install -y sudo
 RUN sudo apt-get install -y fortune
 RUN sudo apt-get install -y cowsay
 RUN ln -s /usr/games/cowsay /usr/local/bin/cowsay
-ENTRYPOINT ["cowsay"]
+
+# 以下のようにENTRYPOINTを指定すると汎用性がなくなるのでdocker runコマンドの引数として実行コマンドを指定する
+# ENTRYPOINT ["cowsay"]
