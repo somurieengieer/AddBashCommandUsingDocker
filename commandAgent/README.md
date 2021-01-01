@@ -9,14 +9,13 @@
 ビルド
 
 ```
-$ docker build -t imageName .
-
+$ docker build -t cow .  # cowはimageName
 ```
 
-Dockerを実行してcowsayを実行
+Dockerを実行してからcowsayを実行する
 ```
-$ docker run -it cow /bin/bash
-$ cowsay "I'm cow"
+$ docker run -it cow /bin/bash # Dockerのbashを実行する
+$ cowsay "I'm cow"             # bashでcowsayを実行
 ```
 
 ## コマンドを作成する
@@ -26,7 +25,7 @@ Dockerのコマンドとして実行
 $ docker run -it --rm  cow hello
 ```
 
-### コマンド実行用のファイルを作成する
+### コマンドを登録する
 
 以下のような内容で「cowsay」ファイルを作る
 ```
@@ -38,17 +37,16 @@ fi
 docker run -it --rm cow $1
 ```
 
-
-作成したcowsayをaliasに登録する。以下はcallmeでcowsayが呼ばれるようになる例。
+aliasコマンドを使ってcowsayをaliasに登録する。以下はcallmeコマンドを作成してcowsayを紐付けている例。
 ```
 $ alias callme='/〜〜/cowsay'  # aliasの設定
 $ callme hello                 # 実行方法の例
 ```
 
-※aliasの一覧は以下の通り
+(参考)よく使うaliasコマンドは以下の通り
 ```
-$ alias      # alias一覧を表示する
-$ alias -p   # alias一覧を表示する。こちらでも同じ結果が出る
+$ alias             # alias一覧を表示する
+$ alias -p          # alias一覧を表示する。こちらでも同じ結果が出る
 $ unalias [command] # aliasを削除
 ```
 
