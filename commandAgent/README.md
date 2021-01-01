@@ -60,7 +60,7 @@ $ ln -s cowsay /usr/local/bin/cowsay
 
 ## コマンドを永続的に使用する
 
-高頻度で使うようなコマンドは~/.bash_profileに以下のように登録する。(bashの場合)
+高頻度で使うようなコマンドは~/.bash_profileか~/.bashrcに以下のように登録する。(bashの場合)
 
 ```
 $ alias callme='/〜〜/cowsay'  # aliasの設定
